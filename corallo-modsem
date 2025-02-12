@@ -1,0 +1,1991 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/flavi/ontologies/2025/1/corallo-modsem#"
+     xml:base="http://www.semanticweb.org/flavi/ontologies/2025/1/corallo-modsem"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:bag="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:modsem-corallo="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/1/corallo-modsem">
+        <dc:date>Gennaio 2025</dc:date>
+        <terms:contributor>Dave Beckett</terms:contributor>
+        <terms:contributor>Nikki Rogers</terms:contributor>
+        <terms:contributor>Participants in W3C&apos;s Semantic Web Deployment Working Group.</terms:contributor>
+        <terms:creator>Alistair Miles</terms:creator>
+        <terms:creator xml:lang="it">Flaviana Corallo</terms:creator>
+        <terms:creator>Sean Bechhofer</terms:creator>
+        <terms:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, &apos;folksonomies&apos;, other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies.</terms:description>
+        <terms:description xml:lang="it">Ontologia per la gestione del fascicolo sanitario eletronico</terms:description>
+        <terms:title xml:lang="it">Ontologia Medicale</terms:title>
+        <terms:title xml:lang="en">SKOS Vocabulary</terms:title>
+        <vann:preferredNamespacePrefix>ontomed:</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo</vann:preferredNamespaceUri>
+        <cpannotationschema:coversRequirements>What is before what?,What&apos;s next?,What&apos;s immediately following this?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What things are contained in this collection (community, collective)? What collections this thing is member of?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What are the items (elements) in this list?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What are the items contained in this bag? </cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What bag is this item an element of?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What is the first/last item in this list?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What is the length (size) of this list?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What is the size of this bag?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What it the next/previous item in the list?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What resource does this item refer to?</cpannotationschema:coversRequirements>
+        <cpannotationschema:coversRequirements>What resource does this list item contain?</cpannotationschema:coversRequirements>
+        <cpannotationschema:extractedFrom>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</cpannotationschema:extractedFrom>
+        <cpannotationschema:extractedFrom>http://swan.mindinformatics.org/ontologies/1.2/collections.owl</cpannotationschema:extractedFrom>
+        <cpannotationschema:hasAuthor>Aldo Gangemi</cpannotationschema:hasAuthor>
+        <cpannotationschema:hasAuthor>Sara Bernardini</cpannotationschema:hasAuthor>
+        <cpannotationschema:hasAuthor>Valentina Presutti</cpannotationschema:hasAuthor>
+        <cpannotationschema:hasAuthor>PaoloCiccarese</cpannotationschema:hasAuthor>
+        <cpannotationschema:hasComponent>http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl</cpannotationschema:hasComponent>
+        <cpannotationschema:hasComponent>http://www.ontologydesignpatterns.org/cp/owl/sequence.owl</cpannotationschema:hasComponent>
+        <cpannotationschema:hasConsequences>Collections and their members can be associated. Time-indexed membership cannot be represented though (you need a situation-based pattern).</cpannotationschema:hasConsequences>
+        <cpannotationschema:hasConsequences>We can represent and reason over transitive or intransitive sequences of any kind. However, since coreference cannot be expressed in OWL, it is not possible to represent and reason over loops and other sequences involving coreference.</cpannotationschema:hasConsequences>
+        <cpannotationschema:hasIntent>To represent domain (not set theory) membership.</cpannotationschema:hasIntent>
+        <cpannotationschema:hasIntent>To represent sequence schemas. It defines the notion of transitive and intransitive precedence and their inverses. 
+It can then be used between tasks, processes, time intervals, spatially locate objects, situations, etc.</cpannotationschema:hasIntent>
+        <cpannotationschema:hasIntent>To model bags of items (elements). The Bag is characterized by a collection that can have multiple copies of each object. </cpannotationschema:hasIntent>
+        <cpannotationschema:hasIntent>To represent ordered collections, i.e. lists.</cpannotationschema:hasIntent>
+        <cpannotationschema:isSpecializationOf>http://www.ontologydesignpatterns.org/cp/owl/sequence.owl</cpannotationschema:isSpecializationOf>
+        <cpannotationschema:reengineeredFrom>http://swan.mindinformatics.org/ontologies/1.2/collections.owl</cpannotationschema:reengineeredFrom>
+        <cpannotationschema:relatedCPs>TimeIndexedMembership</cpannotationschema:relatedCPs>
+        <cpannotationschema:relatedCPs>http://www.ontologydesignpatterns.org/cp/owl/bag.owl</cpannotationschema:relatedCPs>
+        <cpannotationschema:relatedCPs>http://www.ontologydesignpatterns.org/cp/owl/list.owl</cpannotationschema:relatedCPs>
+        <cpannotationschema:relatedCPs>http://www.ontologydesignpatterns.org/cp/owl/set.owl</cpannotationschema:relatedCPs>
+        <cpannotationschema:scenarios>My saxophone collection includes a Mark VI tenor, a Balanced Action alto, and a Conn Transitional bari.</cpannotationschema:scenarios>
+        <rdfs:comment>The collection entity pattern. 
+It is extracted from DOLCE-UltraLite by partial clone of elements.</rdfs:comment>
+        <rdfs:comment>The Bag is characterized by a collection that can have multiple copies of each object. This is performed through the Item entity. The Item is linking exaclty one resource through the relationship itemContent.</rdfs:comment>
+        <rdfs:label xml:lang="it">Ontologia Medicale</rdfs:label>
+        <rdfs:label>collection entity</rdfs:label>
+        <rdfs:label>membership</rdfs:label>
+        <rdfs:label>ordering</rdfs:label>
+        <rdfs:label>precedence</rdfs:label>
+        <rdfs:label>sequence</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/skos-reference/"/>
+        <owl:versionInfo>1.1
+- Revised and annotated for ODP submission by Aldo Gangemi
+1.0
+- Created by Valentina Presutti and Sara Bernardini</owl:versionInfo>
+        <owl:versionInfo>1.1 added rdfs:isDefinedBy for all named entities</owl:versionInfo>
+        <owl:versionInfo>Created by Aldo Gangemi and Valentina Presutti</owl:versionInfo>
+        <owl:versionInfo>Created with TopBraid Composer</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements">
+        <rdfs:comment>This annotation property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom">
+        <rdfs:comment>This annotation property should be assigned with a URI, which points to the possible reference ontology which the annotated pattern was extracted from (i.e. the reference ontology that the ontology elements have been deeply or partially cloned by). The range is not explicit in the definition of the annotation property because it would turn the ontology to OWL Full. E.g. The participation pattern is extracted from the Dolce Ultra Lite ontology, hence the value for this annotation property is http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasAuthor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasAuthor"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent">
+        <rdfs:comment>This annotation property is useful for content ontology design patterns. Its value is a URI, which refers to another content ontology design pattern which is a component of the annotated one.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences">
+        <rdfs:comment>This annotation property is used for briefly describing the benefits and/or possible trade-offs when using the CP.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent">
+        <rdfs:comment>This annotation property is used in order to describe the intent of the content pattern.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf">
+        <rdfs:comment>This annotation property is useful for content ontology design patterns and its elements. Its value is a URI, which refers either to a content ontology design pattern that is specialized by the annotated one, or to an ontology element that is specialized by the annotated one.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom">
+        <rdfs:comment>This annotation property should be assigned with a URI, which points to the concept schema, page, or anything else from which the annotated pattern was reengineered.  If the source does not have any URI e.g., a printed book, this property value should provide information as precise as possible in order to identify the source. This property is alternative to the extractedFrom property because it is used when the pattern come from a concept schema which is not an owl ontology. For example content ontology design patterns, which are reengineered from data model patterns, rdf schemas, etc. should be annotatd with this property. E.g. The basicpersonalfoaf pattern is extracted from the rdf FOAF specification, hence the value for this annotation property is http://xmlns.com/foaf/spec/20071002.rdf</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs">
+        <rdfs:comment>This annotation property can be used to indicate other CPs (if any) that specialize, generalize, inlcude, or are components of the CP. Furthermore, this field may indicate other CPs that are typically used in conjunction with the described one. Important similarities and differences with other patterns can be also described here.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios">
+        <rdfs:comment>This annotation property is used for describing examples of instantiation of the Content OP. For example, for the part-of Content OP (which represents part-whole relations) a possible scenario is the sentence: &quot;the brain is part of the human body&quot;. Scenarios are expressed as natural language sentences.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+        <rdfs:comment xml:lang="en">The range of skos:altLabel is the class of RDF plain literals.</rdfs:comment>
+        <rdfs:comment xml:lang="en">skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">alternative label</rdfs:label>
+        <skos:definition xml:lang="en">An alternative lexical label for a resource.</skos:definition>
+        <skos:example xml:lang="en">Acronyms, abbreviations, spelling variants, and irregular plural/singular forms may be included among the alternative labels for a concept. Mis-spelled terms are normally included as hidden labels (see skos:hiddenLabel).</skos:example>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+        <skos:definition xml:lang="en">A statement or formal explanation of the meaning of a concept.</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">example</rdfs:label>
+        <skos:definition xml:lang="en">An example of the use of a concept.</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">scope note</rdfs:label>
+        <skos:definition xml:lang="en">A note that helps to clarify the meaning and/or the use of a concept.</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+        <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdfs:comment>has item - The link to every item of the Bag</rdfs:comment>
+        <rdfs:label>has item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>itemContent - The link to the actual resource to which the item refers.</rdfs:comment>
+        <rdfs:label>item content</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <rdfs:comment>item of - The link from an item to the Bag where it is contained</rdfs:comment>
+        <rdfs:label>item of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdfs:label>first item of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment>first item - The link to the first item of the list</rdfs:comment>
+        <rdfs:label>has first item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment>last item - The link to the last item of the list</rdfs:comment>
+        <rdfs:label>has last item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdfs:label>last item of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows"/>
+        <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment>next item - The link to the next item in a list (ordered collection)</rdfs:comment>
+        <rdfs:label>next item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment>previous item - The link to the previous item in a list (ordered collection)</rdfs:comment>
+        <rdfs:label>previous item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows"/>
+        <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>The intransitive follows relation. For example, Wednesday directly precedes Thursday. Directness of precedence depends on the designer conceptualization.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl"/>
+        <rdfs:label xml:lang="en">directly follows</rdfs:label>
+        <rdfs:label xml:lang="it">segue direttamente</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>The intransitive precedes relation. For example, Monday directly precedes Tuesday. Directness of precedence depends on the designer conceptualization.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl"/>
+        <rdfs:label xml:lang="en">directly precedes</rdfs:label>
+        <rdfs:label xml:lang="it">precede direttamente</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows">
+        <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A relation between entities, expressing a &apos;sequence&apos; schema. 
+E.g. &apos;year 2000 follows 1999&apos;, &apos;preparing coffee&apos; follows &apos;deciding what coffee to use&apos;, &apos;II World War follows I World War&apos;, etc. 
+It can be used between tasks, processes or time intervals, and subproperties would fit best in order to distinguish the different uses.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl"/>
+        <rdfs:label xml:lang="en">follows</rdfs:label>
+        <rdfs:label xml:lang="it">segue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A relation between entities, expressing a &apos;sequence&apos; schema. 
+E.g. &apos;year 1999 precedes 2000&apos;, &apos;deciding what coffee to use&apos; precedes &apos;preparing coffee&apos;, &apos;World War II follows World War I&apos;, &apos;in the Milan to Rome autoroute, Bologna precedes Florence&apos;, etc.
+It can then be used between tasks, processes, time intervals, spatially locate objects, situations, etc. 
+Subproperties can be defined in order to distinguish the different uses.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl"/>
+        <rdfs:label xml:lang="it">precede</rdfs:label>
+        <rdfs:label xml:lang="en">precedes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#ci_lavora -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#ci_lavora">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#lavora"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdfs:comment xml:lang="it">Indica i dottori che lavorano in una clinica</rdfs:comment>
+        <rdfs:label xml:lang="it">ci lavora</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#effetuaEsame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#effetuaEsame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:comment xml:lang="it">effettua esame definisce il dottore che effettua una visita medica</rdfs:comment>
+        <rdfs:label xml:lang="it">effettua esame</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#essereConsigliata -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#essereConsigliata">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdfs:comment xml:lang="it">essere condisgliata lega una patologia a una terapia</rdfs:comment>
+        <rdfs:label xml:lang="it">essere consigliata</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haDegenza -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haDegenza">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente_ricoverato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
+        <rdfs:label xml:lang="it">ha degenza</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haEsito -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haEsito">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
+        <rdfs:comment xml:lang="it">indica l&apos;esito di un visita medica, ovvero la patologia che ne è riscontrata</rdfs:comment>
+        <rdfs:label xml:lang="it">ha esito</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haFarmaco -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haFarmaco">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#farmaco"/>
+        <rdfs:comment xml:lang="it">indica il faramaco utilizzato in una terapia</rdfs:comment>
+        <rdfs:label>ha farmaco</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haInquadramentoClinico -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haInquadramentoClinico">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#èInquadramentoClinico"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
+        <rdfs:comment xml:lang="it">associa il paziente a un inquadramento clinico</rdfs:comment>
+        <rdfs:label xml:lang="it">ha inquadramento clinico</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haPatologia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haPatologia">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#èPatologiaDi"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#riceveVisitaMedica"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haEsito"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="it">associa a un paziente una patologia</rdfs:comment>
+        <rdfs:label xml:lang="it">ha patologia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#lavora -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#lavora">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <rdfs:label xml:lang="it">indica in che ospedale lavora un dottore</rdfs:label>
+        <rdfs:label xml:lang="it">lavora</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#presso -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#presso">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <rdfs:comment xml:lang="it">indica dove ha la degenza un paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">presso</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#riceveVisitaMedica -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#riceveVisitaMedica">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:comment xml:lang="it">associa a un paziente una visita</rdfs:comment>
+        <rdfs:label xml:lang="it">riceve visita medica</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#richiedeTerapia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#richiedeTerapia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haPatologia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#essereConsigliata"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="it">indica la terapia che è associata un paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">richiede terapia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#ricoverato -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#ricoverato">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente_ricoverato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <rdfs:comment xml:lang="it">indica in che ospedale è ricoverato un paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">ricoverato</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#segueTerapia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#segueTerapia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdfs:comment>indica la terapua che segue un paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">segue terapia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#èInquadramentoClinico -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#èInquadramentoClinico">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:comment xml:lang="it">è la proprietà inversa di ha inquadramento clincio</rdfs:comment>
+        <rdfs:label xml:lang="it">è inquadramento clinico</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#èPatologiaDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#èPatologiaDi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:comment xml:lang="it">è la prorpietà inversa di ha patologia</rdfs:comment>
+        <rdfs:label xml:lang="it">è patologia di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broadMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broadMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowMatch"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has broader match</rdfs:label>
+        <skos:definition xml:lang="en">skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+        <rdfs:comment xml:lang="en">Broader concepts are typically rendered as parents in a concept hierarchy (tree).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has broader</rdfs:label>
+        <skos:definition xml:lang="en">Relates a concept to a concept that is more general in meaning.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broaderTransitive -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broaderTransitive">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowerTransitive"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has broader transitive</rdfs:label>
+        <skos:definition>skos:broaderTransitive is a transitive superproperty of skos:broader.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:broaderTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has close match</rdfs:label>
+        <skos:definition xml:lang="en">skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of &quot;compound errors&quot; when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:comment xml:lang="en">skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has exact match</rdfs:label>
+        <skos:definition xml:lang="en">skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#hasTopConcept -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#topConceptOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has top concept</rdfs:label>
+        <skos:definition xml:lang="en">Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is in scheme</rdfs:label>
+        <skos:definition xml:lang="en">Relates a resource (for example a concept) to a concept scheme in which it is included.</skos:definition>
+        <skos:scopeNote xml:lang="en">A concept may be a member of more than one concept scheme.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#mappingRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#mappingRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <rdfs:comment xml:lang="en">These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is in mapping relation with</rdfs:label>
+        <skos:definition xml:lang="en">Relates two concepts coming, by convention, from different schemes, and that have comparable meanings</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#member -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#member">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has member</rdfs:label>
+        <skos:definition xml:lang="en">Relates a collection to one of its members.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#memberList -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#memberList">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+        <rdfs:comment xml:lang="en">For any resource, every item in the list given as the value of the
+      skos:memberList property is also a value of the skos:member property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has member list</rdfs:label>
+        <skos:definition xml:lang="en">Relates an ordered collection to the RDF list containing its members.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrowMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrowMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has narrower match</rdfs:label>
+        <skos:definition xml:lang="en">skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowerTransitive"/>
+        <rdfs:comment xml:lang="en">Narrower concepts are typically rendered as children in a concept hierarchy (tree).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has narrower</rdfs:label>
+        <skos:definition xml:lang="en">Relates a concept to a concept that is more specific in meaning.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrowerTransitive -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrowerTransitive">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has narrower transitive</rdfs:label>
+        <skos:definition>skos:narrowerTransitive is a transitive superproperty of skos:narrower.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#related">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:comment xml:lang="en">skos:related is disjoint with skos:broaderTransitive</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has related</rdfs:label>
+        <skos:definition xml:lang="en">Relates a concept to a concept with which there is an associative semantic relationship.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#relatedMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#relatedMatch"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has related match</rdfs:label>
+        <skos:definition xml:lang="en">skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#semanticRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#semanticRelation">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is in semantic relation with</rdfs:label>
+        <skos:definition xml:lang="en">Links a concept to a concept related by meaning.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should not be used directly, but as a super-property for all properties denoting a relationship of meaning between concepts.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#topConceptOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#topConceptOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is top concept in scheme</rdfs:label>
+        <skos:definition xml:lang="en">Relates a concept to the concept scheme that it is a top level concept of.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#size -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#size">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>size - The number of items belonging to a collection</rdfs:comment>
+        <rdfs:label>size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Sesso -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Sesso">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>sesso di una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">sesso</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#codice_fiscale -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#codice_fiscale">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">indica il codice fiscale di una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">codice fiscale</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#cognome -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#cognome">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>indica il cognome di una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">cognome</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_di_nascita -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_di_nascita">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>indica la data di nascita di una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">data di nascita</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_ricovero -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_ricovero">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente_ricoverato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>indica la data di inizio di ricovero di un paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">data di ricovero</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#descrizione_anamnesi -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#descrizione_anamnesi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">descrizione anamnesi nei suo particolari</rdfs:comment>
+        <rdfs:label xml:lang="it">descrizione anamnesi</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fine_degenza -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fine_degenza">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="it">inzio data della degenza di un paziete</rdfs:comment>
+        <rdfs:label xml:lang="it">fine degenza</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#indirizzo_ospedale -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#indirizzo_ospedale">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">Indirzzo di un ospedale</rdfs:comment>
+        <rdfs:label xml:lang="it">indirizzo ospedale</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inizio_degenza -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inizio_degenza">
+        <rdfs:comment xml:lang="it">inizio data di una degenza di un paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">inizio degenza</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#nome -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#nome">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>indica il nome di una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">nome</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#numero_licenza -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#numero_licenza">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>numero di licenza di un dottore</rdfs:comment>
+        <rdfs:label xml:lang="it">numero licenza medica</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#p.iva -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#p.iva">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_privata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="it">p.iva</rdfs:label>
+        <rdfs:label xml:lang="it">partita iva di una clinica privata</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia_anamnesi -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia_anamnesi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>tipo di terapia indicata per un&apos;ananmesi</rdfs:comment>
+        <rdfs:label xml:lang="it">terapia  anamnesi</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment>Clinical finding</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/404684003</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">SCTID:Clinical_finding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:hospitalized_patient -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:hospitalized_patient">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente_ricoverato"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:comment xml:lang="en">hospitalized patient</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">http://purl.bioontology.org/ontology/SNOMEDCT/103324002</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">SCTID:hospitalized_patient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/162408000#SCTID:General_symptom_description -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/162408000#SCTID:General_symptom_description">
+        <rdfs:comment xml:lang="en">General symptom description (finding)</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/162408000</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">SCTID:General_symptom_description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Cardiologist -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Cardiologist">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_cardiologo"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdfs:comment xml:lang="en">Cardiologist occupation, doctor spacialization</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/404684003</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">SCTID:Cardiologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Hospital -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Hospital">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <rdfs:comment xml:lang="en">Hospital (environment)</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/22232009</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">SCTID:Hospital</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/66862007#SCTID:Radiologist -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/66862007#SCTID:Radiologist">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_radiologo"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdfs:comment xml:lang="en">Radiologist (occupation)</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/103324002</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">SCTID:Radiologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdfs:comment>Bag - Collection that can have a number of copies of each object</rdfs:comment>
+        <rdfs:label>(collections) Bag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdfs:comment>Item - Element belonging to a Bag</rdfs:comment>
+        <rdfs:label>item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection">
+        <rdfs:comment>Any container for entities that share one or more common properties. E.g. &quot;stone objects&quot;, &quot;the nurses&quot;, &quot;the Louvre Aegyptian collection&quot;. A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl"/>
+        <rdfs:label xml:lang="en">Collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#List -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <rdfs:comment>List - An ordered array of items, that can be present in multiple copies</rdfs:comment>
+        <rdfs:label>list</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdfs:comment>ListItem - Element belonging to a list</rdfs:comment>
+        <rdfs:label>list item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment xml:lang="it">Anamnesi</rdfs:comment>
+        <rdfs:comment xml:lang="it">Anamnesi del paziente</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdfs:comment xml:lang="it">Anamnesi familiare, ovvero referti dei parenti del paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">Anamnesi_familiare</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdfs:comment xml:lang="it">riguarda lo stato di salute del paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">Anamnesi_fisiologica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_patologica_remota -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_patologica_remota">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdfs:comment xml:lang="it">riguarda precedenti malattie o interventi del paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">Anamnesi_pataologica_remota</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_prossima -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_prossima">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdfs:comment xml:lang="it">riguarda l&apos;anamnesi recente,ultima eseguita per la quale si esegue una terapia</rdfs:comment>
+        <rdfs:label xml:lang="it">Anamnesi_prossima</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_privata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_privata">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#p.iva"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Hospital"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_pubblica"/>
+        <rdfs:comment xml:lang="it">Indica una clinica privata, ovvero non pubblica</rdfs:comment>
+        <rdfs:label xml:lang="it">Clinica_privata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_pubblica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_pubblica">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Hospital"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <rdfs:comment xml:lang="it">Clinica pubblica indica una struttura pubblica, statale</rdfs:comment>
+        <rdfs:comment xml:lang="it">Clinica_pubblica</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
+        <rdfs:comment xml:lang="it">periodo di degenza del paziente in ospedale</rdfs:comment>
+        <rdfs:label xml:lang="it">Degenza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#numero_licenza"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">Dottore, medico generico, i quale non ha una definita specializzazione</rdfs:comment>
+        <rdfs:label xml:lang="it">Dottore</rdfs:label>
+        <skos:example xml:lang="it">esempio medico di base</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_cardiologo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_cardiologo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#effetuaEsame"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_ematologico"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_radiologo"/>
+        <rdfs:comment xml:lang="it">cardiologo, specializzazione di un dottore. occupazione</rdfs:comment>
+        <rdfs:label xml:lang="it">Cardiologo</rdfs:label>
+        <skos:altLabel xml:lang="en">Cardiologist</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_radiologo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_radiologo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#effetuaEsame"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_radiologico"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdfs:comment xml:lang="it">Radiologo occupazione, specializzazione dottore</rdfs:comment>
+        <rdfs:label xml:lang="it">Radiologo</rdfs:label>
+        <skos:altLabel xml:lang="en">Radiologist</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_cardiologico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_cardiologico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:subClassOf rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:comment xml:lang="it">esame cariologico</rdfs:comment>
+        <rdfs:label xml:lang="it">Esame_cardiologico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_ematologico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_ematologico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:subClassOf rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:comment xml:lang="it">esame ematologico</rdfs:comment>
+        <rdfs:label xml:lang="it">Esame_ematologico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_istologico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_istologico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:subClassOf rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:comment xml:lang="it">esame istologico</rdfs:comment>
+        <rdfs:label xml:lang="it">Esame_istologico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_radiologico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_radiologico">
+        <owl:equivalentClass rdf:resource="https://icd.who.int/browse10/2019/en#z01.6"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:subClassOf rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:comment xml:lang="it">esame radiologico</rdfs:comment>
+        <rdfs:label xml:lang="it">Esame_radiologico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico">
+        <rdfs:comment xml:lang="it">evento clinco generale</rdfs:comment>
+        <rdfs:label xml:lang="it">Evento_clinico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdfs:comment xml:lang="it">Per inquadramento clinico si intende la classica cartella sanitaria, la quale contine più anamnesi</rdfs:comment>
+        <rdfs:label xml:lang="it">Inquadramento_clinico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_privata"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_pubblica"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="it">Ospedale, struttura</rdfs:comment>
+        <rdfs:label xml:lang="it">Ospedale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/162408000#SCTID:General_symptom_description"/>
+        <rdfs:comment xml:lang="it">definizione di una patologia</rdfs:comment>
+        <rdfs:label xml:lang="it">Patologia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haInquadramentoClinico"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">paziente, persona che ha effetuato un esame</rdfs:comment>
+        <rdfs:label xml:lang="it">paziente</rdfs:label>
+        <skos:altLabel xml:lang="en">Patient</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente_ricoverato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente_ricoverato">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haDegenza"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_ricovero"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdfs:comment xml:lang="it">paziente ricoverato</rdfs:comment>
+        <rdfs:label xml:lang="it">paziente ricoverato</rdfs:label>
+        <skos:altLabel xml:lang="en">hospitalized patient</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">Persona identificata dalle sue generalità:  nome, cognome, codice fiscale e data di nascita</rdfs:comment>
+        <rdfs:label xml:lang="it">Persona</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia">
+        <rdfs:comment xml:lang="it">terapia consigliata a un paziente</rdfs:comment>
+        <rdfs:label xml:lang="it">terapia</rdfs:label>
+        <skos:altLabel xml:lang="en">therapy</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_farmacologica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_farmacologica">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#haFarmaco"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#farmaco"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdfs:comment xml:lang="it">terapia farmacologica consiste in una terapia a base di farmaci</rdfs:comment>
+        <rdfs:label xml:lang="it">terapia farmacologica</rdfs:label>
+        <skos:altLabel xml:lang="en">drug therapy</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_riabilitativa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_riabilitativa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fisioterapia"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdfs:comment xml:lang="it">terapia riabilitativa consiste in una terapia che punta a supportare il recupero motorio di una parte specifica del corpo dopo un trauma</rdfs:comment>
+        <rdfs:label xml:lang="it">terapia riabilitativa</rdfs:label>
+        <skos:altLabel xml:lang="en">rehabilitation therapy</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica">
+        <owl:equivalentClass rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
+        <rdfs:comment xml:lang="it">visita medica generica</rdfs:comment>
+        <rdfs:label xml:lang="it">Visita_medica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#farmaco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#farmaco">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ibuprofene"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paracetamolo"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_farmacologica"/>
+        <rdfs:comment xml:lang="it">farmaco, medicinale somministrato al paziente nel corso della sua guarigione</rdfs:comment>
+        <rdfs:label xml:lang="it">farmaco</rdfs:label>
+        <skos:altLabel xml:lang="en">drug</skos:altLabel>
+        <skos:altLabel xml:lang="en">medicine</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#List -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Collection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Collection">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Collection</rdfs:label>
+        <skos:definition xml:lang="en">A meaningful collection of concepts.</skos:definition>
+        <skos:scopeNote xml:lang="en">Labelled collections can be used where you would like a set of concepts to be displayed under a &apos;node label&apos; in the hierarchy.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+        <skos:definition xml:lang="en">An idea or notion; a unit of thought.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Concept Scheme</rdfs:label>
+        <skos:definition xml:lang="en">A set of concepts, optionally including statements about semantic relationships between those concepts.</skos:definition>
+        <skos:example xml:lang="en">Thesauri, classification schemes, subject heading lists, taxonomies, &apos;folksonomies&apos;, and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies.</skos:example>
+        <skos:scopeNote xml:lang="en">A concept scheme may be defined to include concepts from different sources.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#OrderedCollection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#OrderedCollection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Ordered Collection</rdfs:label>
+        <skos:definition xml:lang="en">An ordered collection of concepts, where both the grouping and the ordering are meaningful.</skos:definition>
+        <skos:scopeNote xml:lang="en">Ordered collections can be used where you would like a set of concepts to be displayed in a specific order, and optionally under a &apos;node label&apos;.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:comment xml:lang="en">The Person class represents people. Something is a Person if it is a person. We don&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered &apos;agents&apos; in FOAF.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">http://xmlns.com/foaf/spec/#term_Person</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">foaf:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://icd.who.int/browse10/2019/en#z01.6 -->
+
+    <owl:Class rdf:about="https://icd.who.int/browse10/2019/en#z01.6">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdfs:subClassOf rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:comment xml:lang="en">Radiological examination.
+Routine:
+chest X-ray
+mammogram</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://icd.who.int/browse10/2019/en#/Z01.6</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">icd:Radiological_examination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://icd.who.int/browse10/2019/en#icd:General_medical_examination -->
+
+    <owl:Class rdf:about="https://icd.who.int/browse10/2019/en#icd:General_medical_examination">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
+        <rdfs:comment xml:lang="en">Health check-up NOS
+Periodic examination (annual)(physical)</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://icd.who.int/browse10/2019/en#/Z00.0</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">icd:General_medical_examination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore1">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/66862007#SCTID:Radiologist"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_radiologo"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <modsem-corallo:lavora rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#clinica_san_luca"/>
+        <modsem-corallo:codice_fiscale>RSSMRA80A01H501Z</modsem-corallo:codice_fiscale>
+        <modsem-corallo:cognome>Rossi</modsem-corallo:cognome>
+        <modsem-corallo:nome>Mario</modsem-corallo:nome>
+        <modsem-corallo:numero_licenza>IT-987654</modsem-corallo:numero_licenza>
+        <rdfs:comment xml:lang="it">dottore mario rossi</rdfs:comment>
+        <rdfs:label xml:lang="it">dott. mario rossi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ibuprofene -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ibuprofene">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_farmacologica"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#farmaco"/>
+        <rdfs:comment xml:lang="it">ibuprofene</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&amp;searchTerm=5640</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="it">Ibuprofene</rdfs:label>
+        <skos:altLabel xml:lang="en">ibuprofen</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paolo_Bianchi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paolo_Bianchi">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:hospitalized_patient"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente_ricoverato"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <modsem-corallo:haDegenza rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#degenza1"/>
+        <modsem-corallo:haInquadramentoClinico rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
+        <modsem-corallo:riceveVisitaMedica rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_cardiologica"/>
+        <modsem-corallo:cognome>Bianchi</modsem-corallo:cognome>
+        <modsem-corallo:nome>paolo</modsem-corallo:nome>
+        <rdfs:comment xml:lang="it">paziente paolo bianchi</rdfs:comment>
+        <rdfs:label xml:lang="it">Paolo Bianchi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paracetamolo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paracetamolo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_farmacologica"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#farmaco"/>
+        <rdfs:comment xml:lang="en">acetaminophen</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&amp;searchTerm=161</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="it">paracentamolo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_familiare -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_familiare">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
+        <modsem-corallo:descrizione_anamnesi>neoplasie: si maligne, madre</modsem-corallo:descrizione_anamnesi>
+        <rdfs:comment xml:lang="it">anamnesi familiare di paolo bianchi</rdfs:comment>
+        <rdfs:label>anamnesi familiare di paolo bianchi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_fisiologica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_fisiologica">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
+        <modsem-corallo:descrizione_anamnesi>diuresi:normale
+stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
+        <rdfs:comment xml:lang="it">anamnesi fisiologica di paolo bianchi</rdfs:comment>
+        <rdfs:label xml:lang="it">anamnesi fisiologica di paolo bianchi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#clinica_san_luca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#clinica_san_luca">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Hospital"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_privata"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <modsem-corallo:indirizzo_ospedale>via san luca 15, bari</modsem-corallo:indirizzo_ospedale>
+        <modsem-corallo:p.iva>47475494391</modsem-corallo:p.iva>
+        <rdfs:comment>clinica privata san luca</rdfs:comment>
+        <rdfs:label xml:lang="it">clinica san luca</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#degenza1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#degenza1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
+        <modsem-corallo:inizio_degenza>1/02/2025</modsem-corallo:inizio_degenza>
+        <rdfs:comment xml:lang="it">degenza del 1 febbraio 2025 di paolo bianchi</rdfs:comment>
+        <rdfs:label xml:lang="it">degenza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#dottore2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#dottore2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <modsem-corallo:lavora rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#clinica_san_luca"/>
+        <modsem-corallo:codice_fiscale>VRDGLL85B41F205X</modsem-corallo:codice_fiscale>
+        <modsem-corallo:cognome>verdi</modsem-corallo:cognome>
+        <modsem-corallo:nome>giulia</modsem-corallo:nome>
+        <modsem-corallo:numero_licenza>IT-123456</modsem-corallo:numero_licenza>
+        <rdfs:comment xml:lang="it">dottoressa giulia verdi radiologa</rdfs:comment>
+        <rdfs:label xml:lang="it">dott. giulia verdi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fisioterapia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fisioterapia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_riabilitativa"/>
+        <rdfs:comment xml:lang="it">fisioterapia, utilizzata per recuperare la mobilità e la funzionalità muscolare e articolare dopo traumi</rdfs:comment>
+        <rdfs:label xml:lang="it">fisioterapia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#influenza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#influenza">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/162408000#SCTID:General_symptom_description"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
+        <rdfs:comment xml:lang="it">generica influenza</rdfs:comment>
+        <rdfs:label xml:lang="it">influenza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
+        <rdfs:comment xml:lang="it">inqudramento clinico</rdfs:comment>
+        <rdfs:label xml:lang="it">inquadramento clinico</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#paziente2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#paziente2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <modsem-corallo:riceveVisitaMedica rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_medica_generale"/>
+        <modsem-corallo:segueTerapia rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fisioterapia"/>
+        <modsem-corallo:nome>bianchi</modsem-corallo:nome>
+        <modsem-corallo:nome>elisa</modsem-corallo:nome>
+        <rdfs:comment xml:lang="it">paziente elisa bianchi</rdfs:comment>
+        <rdfs:label xml:lang="it">elisa bianchi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#polmonite -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#polmonite">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/162408000#SCTID:General_symptom_description"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
+        <modsem-corallo:essereConsigliata rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia"/>
+        <rdfs:comment xml:lang="it">malattia apparato respiratorio</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://icd.who.int/browse10/2019/en#/J09-J18</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="it">polmonite</rdfs:label>
+        <skos:altLabel xml:lang="en">pneumonia</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_farmacologica"/>
+        <modsem-corallo:haFarmaco rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ibuprofene"/>
+        <rdfs:comment xml:lang="it">terapia faramaceutica ibuprofene</rdfs:comment>
+        <rdfs:label xml:lang="it">Terapia con Ibuprofene</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia_con_paracentamolo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia_con_paracentamolo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Terapia_farmacologica"/>
+        <modsem-corallo:haFarmaco rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paracetamolo"/>
+        <rdfs:comment xml:lang="it">terapia con paracentamolo</rdfs:comment>
+        <rdfs:label xml:lang="it">terapia con paracentamolo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_cardiologica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_cardiologica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Esame_radiologico"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdf:type rdf:resource="https://icd.who.int/browse10/2019/en#z01.6"/>
+        <rdf:type rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <modsem-corallo:haEsito rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#polmonite"/>
+        <rdfs:comment xml:lang="it">visita cardiologica</rdfs:comment>
+        <rdfs:label xml:lang="it">visita cardiologica</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_medica_generale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_medica_generale">
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Visita_medica"/>
+        <rdf:type rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <modsem-corallo:haEsito rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#influenza"/>
+        <rdfs:comment xml:lang="it">visita medica generale di elisa bianchi</rdfs:comment>
+        <rdfs:label xml:lang="it">visita medica generale</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest">
+        <rdfs:comment>This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf">
+        <rdfs:comment>This annotation property is used for referring a cloned ontology entity to its cloning source.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#deszcrizione_evento_clinico">
+        <rdfs:comment xml:lang="it">descrizione di un evento clinico, per descrivere brevemente l&apos;analisi effettuata dal dottore</rdfs:comment>
+        <rdfs:label xml:lang="it">desc evento clinico</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#changeNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">change note</rdfs:label>
+        <skos:definition xml:lang="en">A note about a modification to a concept.</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">editorial note</rdfs:label>
+        <skos:definition xml:lang="en">A note for an editor, translator or maintainer of the vocabulary.</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#hiddenLabel">
+        <rdfs:comment xml:lang="en">The range of skos:hiddenLabel is the class of RDF plain literals.</rdfs:comment>
+        <rdfs:comment xml:lang="en">skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">hidden label</rdfs:label>
+        <skos:definition xml:lang="en">A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations.</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#historyNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">history note</rdfs:label>
+        <skos:definition xml:lang="en">A note about the past state/use/meaning of a concept.</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#notation">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">notation</rdfs:label>
+        <skos:definition xml:lang="en">A notation, also known as classification code, is a string of characters such as &quot;T58.5&quot; or &quot;303.4833&quot; used to uniquely identify a concept within the scope of a given concept scheme.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:notation is used with a typed literal in the object position of the triple.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">note</rdfs:label>
+        <skos:definition xml:lang="en">A general note, for any purpose.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property may be used directly, or as a super-property for more specific note types.</skos:scopeNote>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+        <rdfs:comment xml:lang="en">A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The range of skos:prefLabel is the class of RDF plain literals.</rdfs:comment>
+        <rdfs:comment xml:lang="en">skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise
+      disjoint properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">preferred label</rdfs:label>
+        <skos:definition xml:lang="en">The preferred lexical label for a resource, in a given language.</skos:definition>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
