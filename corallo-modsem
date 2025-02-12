@@ -12,18 +12,19 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:modsem-corallo="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#"
+     xmlns:collectionentity="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#"
      xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/1/corallo-modsem">
+        <dc:creator xml:lang="it">Flaviana Corallo</dc:creator>
         <dc:date>Gennaio 2025</dc:date>
+        <dc:description xml:lang="it">Ontologia per la gestione del fascicolo sanitario eletronico</dc:description>
+        <dc:title xml:lang="it">Ontologia Medicale</dc:title>
         <terms:contributor>Dave Beckett</terms:contributor>
         <terms:contributor>Nikki Rogers</terms:contributor>
         <terms:contributor>Participants in W3C&apos;s Semantic Web Deployment Working Group.</terms:contributor>
         <terms:creator>Alistair Miles</terms:creator>
-        <terms:creator xml:lang="it">Flaviana Corallo</terms:creator>
         <terms:creator>Sean Bechhofer</terms:creator>
         <terms:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, &apos;folksonomies&apos;, other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies.</terms:description>
-        <terms:description xml:lang="it">Ontologia per la gestione del fascicolo sanitario eletronico</terms:description>
-        <terms:title xml:lang="it">Ontologia Medicale</terms:title>
         <terms:title xml:lang="en">SKOS Vocabulary</terms:title>
         <vann:preferredNamespacePrefix>ontomed:</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo</vann:preferredNamespaceUri>
@@ -92,9 +93,27 @@ It is extracted from DOLCE-UltraLite by partial clone of elements.</rdfs:comment
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -955,6 +974,17 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     
 
 
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_evento_clinico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_evento_clinico">
+        <rdfs:domain rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="it">data evento clinico</rdfs:comment>
+        <rdfs:label xml:lang="it">data evento clinico</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_ricovero -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#data_ricovero">
@@ -977,6 +1007,17 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     
 
 
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#deszcrizione_evento_clinico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#deszcrizione_evento_clinico">
+        <rdfs:domain rdf:resource="https://icd.who.int/browse10/2019/en#icd:General_medical_examination"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">descrizione di un evento clinico, per descrivere brevemente l&apos;analisi effettuata dal dottore</rdfs:comment>
+        <rdfs:label xml:lang="it">desc evento clinico</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fine_degenza -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fine_degenza">
@@ -985,6 +1026,17 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="it">inzio data della degenza di un paziete</rdfs:comment>
         <rdfs:label xml:lang="it">fine degenza</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#id_inq_clinico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#id_inq_clinico">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">id per identificare un iquadramento clincio</rdfs:comment>
+        <rdfs:label xml:lang="it">id inquadramento clinico</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1004,6 +1056,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inizio_degenza -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inizio_degenza">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="it">inizio data di una degenza di un paziente</rdfs:comment>
         <rdfs:label xml:lang="it">inizio degenza</rdfs:label>
     </owl:DatatypeProperty>
@@ -1070,6 +1124,10 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment>Clinical finding</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/404684003</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">SCTID:Clinical_finding</rdfs:label>
@@ -1104,6 +1162,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Cardiologist">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_cardiologo"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/66862007#SCTID:Radiologist"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_radiologo"/>
         <rdfs:comment xml:lang="en">Cardiologist occupation, doctor spacialization</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/404684003</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">SCTID:Cardiologist</rdfs:label>
@@ -1127,6 +1187,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/66862007#SCTID:Radiologist">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_radiologo"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_cardiologo"/>
         <rdfs:comment xml:lang="en">Radiologist (occupation)</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/SNOMEDCT/103324002</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">SCTID:Radiologist</rdfs:label>
@@ -1138,6 +1199,13 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_patologica_remota"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_prossima"/>
         <rdfs:comment>Bag - Collection that can have a number of copies of each object</rdfs:comment>
         <rdfs:label>(collections) Bag</rdfs:label>
     </owl:Class>
@@ -1155,6 +1223,8 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment>Item - Element belonging to a Bag</rdfs:comment>
         <rdfs:label>item</rdfs:label>
     </owl:Class>
@@ -1164,6 +1234,12 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection -->
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection">
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_patologica_remota"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_prossima"/>
         <rdfs:comment>Any container for entities that share one or more common properties. E.g. &quot;stone objects&quot;, &quot;the nurses&quot;, &quot;the Louvre Aegyptian collection&quot;. A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl"/>
         <rdfs:label xml:lang="en">Collection</rdfs:label>
@@ -1175,6 +1251,12 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <owl:disjointWith rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_patologica_remota"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_prossima"/>
         <rdfs:comment>List - An ordered array of items, that can be present in multiple copies</rdfs:comment>
         <rdfs:label>list</rdfs:label>
     </owl:Class>
@@ -1185,6 +1267,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment>ListItem - Element belonging to a list</rdfs:comment>
         <rdfs:label>list item</rdfs:label>
     </owl:Class>
@@ -1195,6 +1278,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment xml:lang="it">Anamnesi</rdfs:comment>
         <rdfs:comment xml:lang="it">Anamnesi del paziente</rdfs:comment>
     </owl:Class>
@@ -1206,6 +1290,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare">
         <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment xml:lang="it">Anamnesi familiare, ovvero referti dei parenti del paziente</rdfs:comment>
         <rdfs:label xml:lang="it">Anamnesi_familiare</rdfs:label>
     </owl:Class>
@@ -1217,6 +1302,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica">
         <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment xml:lang="it">riguarda lo stato di salute del paziente</rdfs:comment>
         <rdfs:label xml:lang="it">Anamnesi_fisiologica</rdfs:label>
     </owl:Class>
@@ -1228,6 +1314,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_patologica_remota">
         <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment xml:lang="it">riguarda precedenti malattie o interventi del paziente</rdfs:comment>
         <rdfs:label xml:lang="it">Anamnesi_pataologica_remota</rdfs:label>
     </owl:Class>
@@ -1239,6 +1326,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_prossima">
         <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/103324002#SCTID:Clinical_finding"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <rdfs:comment xml:lang="it">riguarda l&apos;anamnesi recente,ultima eseguita per la quale si esegue una terapia</rdfs:comment>
         <rdfs:label xml:lang="it">Anamnesi_prossima</rdfs:label>
     </owl:Class>
@@ -1585,6 +1673,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
 
     <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
         <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
         <skos:definition xml:lang="en">An idea or notion; a unit of thought.</skos:definition>
@@ -1595,6 +1684,7 @@ Subproperties can be defined in order to distinguish the different uses.</rdfs:c
     <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
 
     <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <rdfs:label xml:lang="en">Concept Scheme</rdfs:label>
         <skos:definition xml:lang="en">A set of concepts, optionally including statements about semantic relationships between those concepts.</skos:definition>
@@ -1707,7 +1797,9 @@ Periodic examination (annual)(physical)</rdfs:comment>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <modsem-corallo:haDegenza rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#degenza1"/>
         <modsem-corallo:haInquadramentoClinico rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
+        <modsem-corallo:haPatologia rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#polmonite"/>
         <modsem-corallo:riceveVisitaMedica rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_cardiologica"/>
+        <modsem-corallo:richiedeTerapia rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia"/>
         <modsem-corallo:cognome>Bianchi</modsem-corallo:cognome>
         <modsem-corallo:nome>paolo</modsem-corallo:nome>
         <rdfs:comment xml:lang="it">paziente paolo bianchi</rdfs:comment>
@@ -1738,6 +1830,7 @@ Periodic examination (annual)(physical)</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_familiare"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
         <modsem-corallo:descrizione_anamnesi>neoplasie: si maligne, madre</modsem-corallo:descrizione_anamnesi>
         <rdfs:comment xml:lang="it">anamnesi familiare di paolo bianchi</rdfs:comment>
         <rdfs:label>anamnesi familiare di paolo bianchi</rdfs:label>
@@ -1754,6 +1847,7 @@ Periodic examination (annual)(physical)</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Anamnesi_fisiologica"/>
         <bag:itemOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
+        <collectionentity:isMemberOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#inquadramento_clinico"/>
         <modsem-corallo:descrizione_anamnesi>diuresi:normale
 stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
         <rdfs:comment xml:lang="it">anamnesi fisiologica di paolo bianchi</rdfs:comment>
@@ -1768,6 +1862,8 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
         <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Hospital"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Clinica_privata"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Ospedale"/>
+        <modsem-corallo:ci_lavora rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore1"/>
+        <modsem-corallo:ci_lavora rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#dottore2"/>
         <modsem-corallo:indirizzo_ospedale>via san luca 15, bari</modsem-corallo:indirizzo_ospedale>
         <modsem-corallo:p.iva>47475494391</modsem-corallo:p.iva>
         <rdfs:comment>clinica privata san luca</rdfs:comment>
@@ -1791,7 +1887,9 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
     <!-- http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#dottore2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#dottore2">
+        <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/404684003#SCTID:Cardiologist"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Dottore_cardiologo"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <modsem-corallo:lavora rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#clinica_san_luca"/>
@@ -1821,6 +1919,7 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#influenza">
         <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/162408000#SCTID:General_symptom_description"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
+        <modsem-corallo:èPatologiaDi rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#paziente2"/>
         <rdfs:comment xml:lang="it">generica influenza</rdfs:comment>
         <rdfs:label xml:lang="it">influenza</rdfs:label>
     </owl:NamedIndividual>
@@ -1833,7 +1932,15 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_familiare"/>
+        <bag:hasItem rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_fisiologica"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_familiare"/>
+        <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_fisiologica"/>
+        <modsem-corallo:èInquadramentoClinico rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paolo_Bianchi"/>
+        <modsem-corallo:inizio_degenza>inqcli1</modsem-corallo:inizio_degenza>
         <rdfs:comment xml:lang="it">inqudramento clinico</rdfs:comment>
         <rdfs:label xml:lang="it">inquadramento clinico</rdfs:label>
     </owl:NamedIndividual>
@@ -1846,6 +1953,7 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paziente"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Persona"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <modsem-corallo:haPatologia rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#influenza"/>
         <modsem-corallo:riceveVisitaMedica rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#visita_medica_generale"/>
         <modsem-corallo:segueTerapia rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#fisioterapia"/>
         <modsem-corallo:nome>bianchi</modsem-corallo:nome>
@@ -1862,6 +1970,7 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
         <rdf:type rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/162408000#SCTID:General_symptom_description"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Patologia"/>
         <modsem-corallo:essereConsigliata rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#terapia"/>
+        <modsem-corallo:èPatologiaDi rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paolo_Bianchi"/>
         <rdfs:comment xml:lang="it">malattia apparato respiratorio</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">https://icd.who.int/browse10/2019/en#/J09-J18</rdfs:isDefinedBy>
         <rdfs:label xml:lang="it">polmonite</rdfs:label>
@@ -1935,10 +2044,6 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf">
         <rdfs:comment>This annotation property is used for referring a cloned ontology entity to its cloning source.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#deszcrizione_evento_clinico">
-        <rdfs:comment xml:lang="it">descrizione di un evento clinico, per descrivere brevemente l&apos;analisi effettuata dal dottore</rdfs:comment>
-        <rdfs:label xml:lang="it">desc evento clinico</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#changeNote">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
