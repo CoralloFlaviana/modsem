@@ -1932,15 +1932,13 @@ stile di vita:regolare, non fumatore</modsem-corallo:descrizione_anamnesi>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Degenza"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Evento_clinico"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#InquadramentoClinico"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_familiare"/>
         <bag:hasItem rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_fisiologica"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_familiare"/>
         <collectionentity:hasMember rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#anamnesi_fisiologica"/>
         <modsem-corallo:èInquadramentoClinico rdf:resource="http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo#Paolo_Bianchi"/>
-        <modsem-corallo:inizio_degenza>inqcli1</modsem-corallo:inizio_degenza>
+        <modsem-corallo:id_inq_clinico>inqcli1</modsem-corallo:id_inq_clinico>
         <rdfs:comment xml:lang="it">inqudramento clinico</rdfs:comment>
         <rdfs:label xml:lang="it">inquadramento clinico</rdfs:label>
     </owl:NamedIndividual>
