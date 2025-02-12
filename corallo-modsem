@@ -25,7 +25,6 @@
         <terms:creator>Alistair Miles</terms:creator>
         <terms:creator>Sean Bechhofer</terms:creator>
         <terms:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, &apos;folksonomies&apos;, other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies.</terms:description>
-        <terms:title xml:lang="en">SKOS Vocabulary</terms:title>
         <vann:preferredNamespacePrefix>ontomed:</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://www.semanticweb.org/flavi/ontologies/2025/0/modsem-corallo</vann:preferredNamespaceUri>
         <cpannotationschema:coversRequirements>What is before what?,What&apos;s next?,What&apos;s immediately following this?</cpannotationschema:coversRequirements>
